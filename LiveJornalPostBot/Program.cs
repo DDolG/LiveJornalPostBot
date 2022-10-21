@@ -1,6 +1,7 @@
 ﻿using System;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using UserActionsImitation;
 
 namespace LiveJornalPostBot
 {
@@ -35,29 +36,19 @@ namespace LiveJornalPostBot
             //load page
             driver.Url= "https://www.livejournal.com/";
 
-            IWebElement element = null;
+            var actionOpenLoginForm = new UserAction()
+            {
+                ElementId = CLASSNAME_BUTTON_LOGIN,
+                SearchType = By.ClassName,
+                TypeAction = EActions.CLICK,
+                WebDriver = driver
+            };
 
-            //search element
-            try
-            {
-                element = driver.FindElement(By.ClassName(CLASSNAME_BUTTON_LOGIN));
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
+            actionOpenLoginForm.SearchElement();
+            actionOpenLoginForm.ChooseAction();
+            actionOpenLoginForm.Execute();
 
-            //click element
-            try
-            {
-                element.Click();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
 
-           
             Console.ReadLine();
         }
     }
