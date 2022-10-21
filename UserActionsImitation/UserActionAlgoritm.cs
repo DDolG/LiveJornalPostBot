@@ -22,6 +22,7 @@ namespace UserActionsImitation
         {
             SearchElement();
             MakeUserAction();
+            Console.WriteLine("Finish " + this.GetType());
         }
 
         public virtual void SearchElement()
