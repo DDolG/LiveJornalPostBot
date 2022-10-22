@@ -1,18 +1,17 @@
 ﻿using OpenQA.Selenium;
 using System;
-using System.Collections.Generic;
-using System.Text;
+using UserActionsImitation.ActionParams;
 
-namespace UserActionsImitation
+namespace UserActionsImitation.UserActions
 {
     public abstract class UserActionAlgoritm
     {
 
         internal IWebElement element;
 
-        internal ActionParams actionParams;
+        internal Params actionParams;
 
-        public virtual void AddUserActionParams(ActionParams actionParams)
+        public virtual void AddUserActionParams(Params actionParams)
         {
             this.actionParams = actionParams;
         }

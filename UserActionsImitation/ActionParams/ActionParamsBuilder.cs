@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace UserActionsImitation
+namespace UserActionsImitation.ActionParams
 {
     public class ActionParamsBuilder
     {
@@ -8,7 +8,7 @@ namespace UserActionsImitation
 
         private IWebDriver WebDriver { get; set; }
 
-        private ActionParams.SearchMethod SearchType { get; set; }
+        private Params.SearchMethod SearchType { get; set; }
 
         private string TextValue { get; set; }
 
@@ -24,7 +24,7 @@ namespace UserActionsImitation
             return this;
         }
 
-        public ActionParamsBuilder AddSearchMethod(ActionParams.SearchMethod searchMethod)
+        public ActionParamsBuilder AddSearchMethod(Params.SearchMethod searchMethod)
         {
             this.SearchType = searchMethod;
             return this;
@@ -36,12 +36,12 @@ namespace UserActionsImitation
             return this;
         }
 
-        public static implicit operator ActionParams(ActionParamsBuilder actionParamsBuilder)
+        public static implicit operator Params(ActionParamsBuilder actionParamsBuilder)
         {
-            return new ActionParams(actionParamsBuilder.ElementId, 
-                                    actionParamsBuilder.WebDriver, 
-                                    actionParamsBuilder.SearchType, 
-                                    actionParamsBuilder.TextValue);
+            return new Params(actionParamsBuilder.ElementId, 
+                              actionParamsBuilder.WebDriver, 
+                              actionParamsBuilder.SearchType, 
+                              actionParamsBuilder.TextValue);
         }
     }
 }

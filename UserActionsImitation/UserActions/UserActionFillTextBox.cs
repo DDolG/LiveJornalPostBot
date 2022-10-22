@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace UserActionsImitation
+namespace UserActionsImitation.UserActions
 {
     public class UserActionFillTextBox : UserActionAlgoritm
     {
