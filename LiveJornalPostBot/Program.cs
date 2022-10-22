@@ -23,46 +23,49 @@ namespace LiveJornalPostBot
             //load page
             driver.Url= "https://www.livejournal.com/";
 
-            var actionOpenLoginForm = new UserActionClick()
-            {
-                ElementId = CLASSNAME_BUTTON_LOGIN,
-                SearchType = By.ClassName,
-                WebDriver = driver
-            };
+            var paramsBuilder = new ActionParamsBuilder();
+
+            var actionOpenLoginForm = new UserActionClick();
+            var actionParams = paramsBuilder
+                .AddElementId(CLASSNAME_BUTTON_LOGIN)
+                .AddSearchMethod(By.ClassName)
+                .AddWebDriver(driver);
+            actionOpenLoginForm.AddUserActionParams(actionParams);
             actionOpenLoginForm.Execute();
 
-            var actionFillPassword = new UserActionFillTextBox()
-            {
-                ElementId = ELEMENTID_PASSWORD_INPUT,
-                SearchType = By.Id,
-                WebDriver = driver,
-                TextValue = USER_PASSWORD
-            };
+
+            var actionFillPassword = new UserActionFillTextBox();
+            actionParams = paramsBuilder
+                .AddElementId(ELEMENTID_PASSWORD_INPUT)
+                .AddSearchMethod(By.Id)
+                .AddWebDriver(driver)
+                .AddTextValue(USER_PASSWORD);
+            actionFillPassword.AddUserActionParams(actionParams);
             actionFillPassword.Execute();
 
-            var actionFillLogin = new UserActionFillTextBox()
-            {
-                ElementId = ELEMENTID_LOGIN_INPUT,
-                SearchType = By.Id,
-                WebDriver = driver,
-                TextValue = USER_LOGIN
-            };
+            var actionFillLogin = new UserActionFillTextBox();
+            actionParams = paramsBuilder
+                .AddElementId(ELEMENTID_LOGIN_INPUT)
+                .AddSearchMethod(By.Id)
+                .AddWebDriver(driver)
+                .AddTextValue(USER_LOGIN);
+            actionFillLogin.AddUserActionParams(actionParams);
             actionFillLogin.Execute();
 
-            var actionLoginFormSubmit = new UserActionSubmit()
-            {
-                ElementId = CLASSNAME_BUTTON_SUBMIT,
-                SearchType = By.ClassName,
-                WebDriver = driver
-            };
+            var actionLoginFormSubmit = new UserActionSubmit();
+            actionParams = paramsBuilder
+                .AddElementId(CLASSNAME_BUTTON_SUBMIT)
+                .AddSearchMethod(By.ClassName)
+                .AddWebDriver(driver);
+            actionLoginFormSubmit.AddUserActionParams(actionParams);
             actionLoginFormSubmit.Execute();
 
-            var actionNewPostClick = new UserActionClick()
-            {
-                ElementId = CLASSNAME_NEW_POST,
-                SearchType = By.ClassName,
-                WebDriver = driver
-            };
+            var actionNewPostClick = new UserActionClick();
+            actionParams = paramsBuilder
+                .AddElementId(CLASSNAME_NEW_POST)
+                .AddSearchMethod(By.ClassName)
+                .AddWebDriver(driver);
+            actionNewPostClick.AddUserActionParams(actionParams);
             actionNewPostClick.Execute();
 
             driver.Navigate().Refresh();

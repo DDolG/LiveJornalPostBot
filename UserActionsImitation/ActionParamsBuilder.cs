@@ -8,13 +8,11 @@ namespace UserActionsImitation
 
         private IWebDriver WebDriver { get; set; }
 
-        public delegate By SearchMethod(string elementId);
-
-        private SearchMethod SearchType { get; set; }
+        private ActionParams.SearchMethod SearchType { get; set; }
 
         private string TextValue { get; set; }
 
-        public ActionParamsBuilder CreateElement(string id)
+        public ActionParamsBuilder AddElementId(string id)
         {
             this.ElementId = id;
             return this;
@@ -26,7 +24,7 @@ namespace UserActionsImitation
             return this;
         }
 
-        public ActionParamsBuilder SearchElementMethod(SearchMethod searchMethod)
+        public ActionParamsBuilder AddSearchMethod(ActionParams.SearchMethod searchMethod)
         {
             this.SearchType = searchMethod;
             return this;
@@ -36,6 +34,14 @@ namespace UserActionsImitation
         {
             this.TextValue = text;
             return this;
+        }
+
+        public static implicit operator ActionParams(ActionParamsBuilder actionParamsBuilder)
+        {
+            return new ActionParams(actionParamsBuilder.ElementId, 
+                                    actionParamsBuilder.WebDriver, 
+                                    actionParamsBuilder.SearchType, 
+                                    actionParamsBuilder.TextValue);
         }
     }
 }
