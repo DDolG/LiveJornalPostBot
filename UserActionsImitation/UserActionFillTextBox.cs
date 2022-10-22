@@ -6,12 +6,11 @@ namespace UserActionsImitation
 {
     public class UserActionFillTextBox : UserActionAlgoritm
     {
-        public string  TextValue { get; set; }
-
+       
         public override void MakeUserAction()
         {
             try { 
-                element.SendKeys(TextValue);
+                element.SendKeys(actionParams.TextValue);
             }
             catch (Exception e)
             {

@@ -7,17 +7,16 @@ namespace UserActionsImitation
 {
     public abstract class UserActionAlgoritm
     {
-        public IWebDriver WebDriver { get; set; }
 
         internal IWebElement element;
 
-        public string ElementId { get; set; }
+        internal ActionParams actionParams;
 
-        public delegate By SearchMethod(string elementId);
-        
-        public SearchMethod SearchType { get; set; }
-        
-        
+        public virtual void AddUserActionParams(ActionParams actionParams)
+        {
+            this.actionParams = actionParams;
+        }
+
         public virtual void Execute()
         {
             SearchElement();
@@ -29,7 +28,7 @@ namespace UserActionsImitation
         {
             try
             {
-                element = WebDriver.FindElement(SearchType(ElementId));
+                element = actionParams.WebDriver.FindElement(actionParams.SearchType(actionParams.ElementId));
             }
             catch (Exception e)
             {
