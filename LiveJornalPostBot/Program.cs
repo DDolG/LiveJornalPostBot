@@ -13,6 +13,7 @@ namespace LiveJornalPostBot
         private const string ELEMENTID_PASSWORD_INPUT   = "lj_loginwidget_password";
         private const string USER_PASSWORD              = "123qweASD";
         private const string CLASSNAME_BUTTON_SUBMIT    = "b-loginform-btn--center";
+        private const string CLASSNAME_NEW_POST = "s-header-item-post--long";//"s-header-sub-list-item__link--post";
         
         static void Main(string[] args)
         {
@@ -55,6 +56,16 @@ namespace LiveJornalPostBot
                 WebDriver = driver
             };
             actionLoginFormSubmit.Execute();
+
+            var actionNewPostClick = new UserActionClick()
+            {
+                ElementId = CLASSNAME_NEW_POST,
+                SearchType = By.ClassName,
+                WebDriver = driver
+            };
+            actionNewPostClick.Execute();
+
+            driver.Navigate().Refresh();
 
             Console.ReadLine();
         }
