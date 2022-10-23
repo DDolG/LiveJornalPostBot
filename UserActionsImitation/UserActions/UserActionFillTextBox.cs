@@ -2,7 +2,7 @@
 
 namespace UserActionsImitation.UserActions
 {
-    public class UserActionFillTextBox : UserActionBase
+    public class UserActionFillTextBox : UserActionTemplate
     {
        
         public override void MakeUserAction()

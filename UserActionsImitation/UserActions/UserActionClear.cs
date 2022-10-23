@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UserActionsImitation.UserActions
 {
-    class UserActionClear : UserActionBase
+    public class UserActionClear : UserActionTemplate
     {
         public override void MakeUserAction()
         {

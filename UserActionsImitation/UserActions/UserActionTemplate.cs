@@ -4,7 +4,7 @@ using UserActionsImitation.ActionParams;
 
 namespace UserActionsImitation.UserActions
 {
-    public abstract class UserActionBase
+    public abstract class UserActionTemplate
     {
 
         internal IWebElement element;

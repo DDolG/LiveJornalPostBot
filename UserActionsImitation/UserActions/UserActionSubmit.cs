@@ -2,7 +2,7 @@
 
 namespace UserActionsImitation.UserActions
 {
-    public class UserActionSubmit : UserActionBase
+    public class UserActionSubmit : UserActionTemplate
     {
         public override void MakeUserAction()
         {
