@@ -4,7 +4,7 @@ using UserActionsImitation.ActionParams;
 
 namespace UserActionsImitation.UserActions
 {
-    public abstract class UserActionAlgoritm
+    public abstract class UserActionBase
     {
 
         internal IWebElement element;
@@ -19,7 +19,13 @@ namespace UserActionsImitation.UserActions
         public virtual void Execute()
         {
             SearchElement();
-            MakeUserAction();
+            try
+            {
+                MakeUserAction();
+            }catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
             Console.WriteLine("Finish " + this.GetType());
         }
 

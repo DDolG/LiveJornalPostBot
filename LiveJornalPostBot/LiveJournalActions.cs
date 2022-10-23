@@ -24,11 +24,11 @@ namespace LiveJornalPostBot
             return instance;
         }
 
-        public IEnumerable<UserActionAlgoritm> GetLiveJournalActions(IWebDriver driver)
+        public IEnumerable<UserActionBase> GetLiveJournalActions(IWebDriver driver)
         {           
             driver.Url = URL;
 
-            var actions = new List<UserActionAlgoritm>();
+            var actions = new List<UserActionBase>();
             var paramsBuilder = new ActionParamsBuilder();
             var actionOpenLoginForm = new UserActionClick();
             var actionParams = paramsBuilder

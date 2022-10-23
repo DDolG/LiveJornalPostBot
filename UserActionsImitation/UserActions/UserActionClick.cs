@@ -2,18 +2,11 @@
 
 namespace UserActionsImitation.UserActions
 {
-    public class UserActionClick : UserActionAlgoritm
+    public class UserActionClick : UserActionBase
     {
         public override void MakeUserAction()
         {
-            try
-            {
-                element.Click();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
+          element.Click();
         }
     }
 }

@@ -2,18 +2,12 @@
 
 namespace UserActionsImitation.UserActions
 {
-    public class UserActionFillTextBox : UserActionAlgoritm
+    public class UserActionFillTextBox : UserActionBase
     {
        
         public override void MakeUserAction()
         {
-            try { 
-                element.SendKeys(actionParams.TextValue);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
-}
+            element.SendKeys(actionParams.TextValue);   
+        }
     }
 }

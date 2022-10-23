@@ -6,29 +6,29 @@ using UserActionsImitation.UserActions;
 
 namespace LiveJornalPostBot
 {
-    public class WikipediaActions
+    public class WiktionaryActions
     {
-        private static WikipediaActions instance;
+        private static WiktionaryActions instance;
 
-        private WikipediaActions()
+        private WiktionaryActions()
         {
         }
 
-        public static WikipediaActions GetIntance()
+        public static WiktionaryActions GetIntance()
         {
             if (instance is null)
             {
-                instance = new WikipediaActions();
+                instance = new WiktionaryActions();
             }
 
             return instance;
         }
 
-        public IEnumerable<UserActionAlgoritm> GetLiveJournalActions(IWebDriver driver)
+        public IEnumerable<UserActionBase> GetLiveJournalActions(IWebDriver driver)
         {           
             driver.Url = URL;
 
-            var actions = new List<UserActionAlgoritm>();
+            var actions = new List<UserActionBase>();
             var paramsBuilder = new ActionParamsBuilder();
             var actionOpenLoginForm = new UserActionClick();
             var actionParams = paramsBuilder

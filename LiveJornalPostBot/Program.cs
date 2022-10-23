@@ -14,7 +14,7 @@ namespace LiveJornalPostBot
         {
 
             var driver = new ChromeDriver();
-            var wikipediaActions = WikipediaActions.GetIntance();
+            var wikipediaActions = WiktionaryActions.GetIntance();
             var actions = wikipediaActions.GetLiveJournalActions(driver).ToList();
             actions.ForEach(x => x.Execute());
 
