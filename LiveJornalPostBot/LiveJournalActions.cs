@@ -1,10 +1,9 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using System.Collections.Generic;
 using UserActionsImitation.ActionParams;
 using UserActionsImitation.UserActions;
 
-namespace LiveJornalPostBot
+namespace SeleniumWebTest
 {
     public class LiveJournalActions
     {

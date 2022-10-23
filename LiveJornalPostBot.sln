@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31605.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiveJornalPostBot", "LiveJornalPostBot\LiveJornalPostBot.csproj", "{E6EEA0FD-2B97-4B50-84BA-7227C3F01C2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeleniumWebTest", "LiveJornalPostBot\SeleniumWebTest.csproj", "{E6EEA0FD-2B97-4B50-84BA-7227C3F01C2B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserActionsImitation", "UserActionsImitation\UserActionsImitation.csproj", "{C4F70250-4015-49F1-92E1-9E5F229AB4F5}"
 EndProject

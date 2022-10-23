@@ -2,7 +2,7 @@
 using System.Linq;
 using OpenQA.Selenium.Chrome;
 
-namespace LiveJornalPostBot
+namespace SeleniumWebTest
 {
     class Program
     {   
