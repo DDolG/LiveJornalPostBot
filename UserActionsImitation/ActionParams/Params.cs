@@ -17,7 +17,7 @@ namespace UserActionsImitation.ActionParams
 
         internal string TextValue { get; set; }
 
-        public Params(string id, IWebDriver webDriver, SearchMethod searchType, string text)
+        internal Params(string id, IWebDriver webDriver, SearchMethod searchType, string text)
         {
             ElementId = id;
             WebDriver = webDriver;
